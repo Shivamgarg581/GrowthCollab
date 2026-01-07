@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ViralMint Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<style>
+:root{
+--bg:#f4f2ef;
+--card:#ffffff;
+--soft:#e6e2dd;
+--ink:#111;
+--muted:#777;
+}
+body.dark{
+--bg:#0b0b0c;
+--card:#141416;
+--ink:#fff;
+--muted:#aaa;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans';overflow-x:hidden}
+
+/* NAV */
+nav{
+position:fixed;
+top:24px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:2rem;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(18px);
+padding:1rem 2.2rem;
+border-radius:999px;
+box-shadow:0 10px 40px rgba(0,0,0,.08);
+z-index:10;
+}
+nav a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.85rem}
+.toggle{cursor:pointer}
+
+/* SECTIONS */
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem}
+.wrap{max-width:1200px;width:100%}
+
+/* HERO */
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:center}
+.hero h1{font-size:clamp(3rem,6vw,4.6rem)}
+.hero p{color:var(--muted);margin-top:1.5rem}
+.hero-btn{margin-top:2rem;display:inline-block;border:1px solid var(--ink);padding:.8rem 2.4rem;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600}
+
+/* CARDS */
+.card{
+background:var(--card);
+border-radius:30px;
+padding:2.4rem;
+box-shadow:0 40px 100px rgba(0,0,0,.08);
+transition:.6s;
+}
+.card:hover{transform:translateY(-20px) scale(1.03);box-shadow:0 60px 160px rgba(0,0,0,.12)}
+
+/* GRID */
+.grid{margin-top:4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem}
+
+/* PARALLAX */
+.parallax{transform:translateY(var(--y))}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem;color:var(--muted)}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#creators">Creators</a>
+<a href="#brand">Brands</a>
+<a href="#contact">Contact</a>
+<div class="toggle" onclick="toggleTheme()">🌓</div>
+</nav>
+
+<section id="home">
+<div class="wrap hero hero-grid">
+<div>
+<h1>ViralMint Studio</h1>
+<p>We connect modern brands with high-impact creators using cinematic campaigns.</p>
+<a class="hero-btn" href="#creators">Explore Creators</a>
+</div>
+<div class="card parallax" style="--y:-40px;height:360px"></div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap grid">
+<div class="card reveal">
+<h2>About</h2>
+<p>Shivam Garg – Influencer Marketing Agent managing creators across India.</p>
+</div>
+<div class="card reveal">
+<h2>Vision</h2>
+<p>Building long-term brand-creator growth.</p>
+</div>
+</div>
+</section>
+
+<section id="creators">
+<div class="wrap">
+<h2>Creators</h2>
+<div class="grid">
+<div class="card reveal">TechReels – 250K</div>
+<div class="card reveal">FoodiesHub – 180K</div>
+<div class="card reveal">TravelWithMe – 300K</div>
+</div>
+<a class="hero-btn" href="https://forms.gle/gqeakCTjyVFMNVd47" target="_blank">Join as Creator</a>
+</div>
+</section>
+
+<section id="brand">
+<div class="wrap grid">
+<div class="card reveal">
+<h2>For Brands</h2>
+<a class="hero-btn" href="mailto:shivgarg597@gmail.com">Start Campaign</a>
+</div>
+<div class="card reveal">
+<h2>Support</h2>
+<a class="hero-btn" href="mailto:shivgarg597@gmail.com">Email Support</a>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap grid">
+<div class="card reveal">
+<h2>Contact</h2>
+<p>Email: shivgarg597@gmail.com</p>
+</div>
+</div>
+</section>
+
+<footer>© 2026 ViralMint Studio</footer>
+
+<script>
+ScrollReveal().reveal('.reveal',{distance:'80px',duration:1200,easing:'cubic-bezier(.19,1,.22,1)'});
+function toggleTheme(){document.body.classList.toggle("dark")}
+</script>
+
+</body>
+</html>
