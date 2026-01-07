@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ViralMint Admin</title>
+<style>
+body{font-family:sans-serif;background:#020617;color:white;padding:2rem}
+.card{background:#111827;padding:1rem;border-radius:10px;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<h1>Admin Panel</h1>
+<p>Creator & Brand Data (local browser storage)</p>
+
+<h2>Support Tickets</h2>
+<div id="tickets"></div>
+
+<script>
+const tickets=JSON.parse(localStorage.getItem("tickets")||"[]");
+tickets.forEach(t=>{
+ document.getElementById("tickets").innerHTML+=
+ `<div class="card"><b>${t.name}</b> (${t.email})<br>${t.message}<br><small>${t.date}</small></div>`;
+});
+</script>
+</body>
+</html>
